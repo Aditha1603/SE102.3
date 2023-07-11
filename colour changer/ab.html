@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Background Color on Mouseover</title>
+  <style>
+    /* Add some basic styling to the buttons */
+    button {
+      padding left: auto;
+      font-size: 32px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button id="redButton">Red</button>
+  <button id="greenButton">Green</button>
+  <button id="blueButton">Blue</button>
+
+  <script>
+    // JavaScript code goes here
+
+    // Get references to the buttons
+    const redButton = document.getElementById('redButton');
+    const greenButton = document.getElementById('greenButton');
+    const blueButton = document.getElementById('blueButton');
+
+    // Add event listeners to the buttons
+    redButton.addEventListener('mouseover', changeBackgroundColor.bind(null, 'red'));
+    redButton.addEventListener('mouseout', restoreBackgroundColor);
+
+    greenButton.addEventListener('mouseover', changeBackgroundColor.bind(null, 'green'));
+    greenButton.addEventListener('mouseout', restoreBackgroundColor);
+
+    blueButton.addEventListener('mouseover', changeBackgroundColor.bind(null, 'blue'));
+    blueButton.addEventListener('mouseout', restoreBackgroundColor);
+
+    // Function to change the background color
+    function changeBackgroundColor(color) {
+      document.body.style.backgroundColor = color;
+    }
+
+    // Function to restore the background color
+    function restoreBackgroundColor() {
+      document.body.style.backgroundColor = 'initial';
+    }
+  </script>
+</body>
+</html>
